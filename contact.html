@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Employee Management System</title>
+
+    <!-- Original CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/resp.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+
+    <!-- Google Fonts: DM Sans + DM Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="Company Logo" />
+          <span>EMS Pro</span>
+        </a>
+        <nav class="nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="login.html" class="btn btn-login">Login</a>
+          <a href="login.html?register=true"
+            class="btn btn-primary">Register</a>
+        </div>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Hero -->
+      <section class="contact-hero">
+        <div class="container">
+          <h1 class="hero-title">Contact Us</h1>
+          <p class="hero-subtitle">
+            We'd love to hear from you. Reach out and we'll respond promptly.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact-section">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Left: Form -->
+            <div class="contact-form-card">
+              <h2>Send a Message</h2>
+              <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="John Doe"
+                    required />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Your Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="john@example.com"
+                    required />
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Your Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="How can we help you?"
+                    required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full "
+                  id="submitBtn">
+                  <span class="btn-text btn-arrow">Send Message</span>
+                  <span class="btn-loader" style="display:none;">
+                    <i class="fas fa-spinner fa-spin"></i> Sending...
+                  </span>
+                </button>
+                <div id="formMessage" class="form-message"></div>
+              </form>
+            </div>
+
+            <!-- Right: Contact Details & Info -->
+            <div class="contact-info-panel">
+              <div class="info-card">
+                <h3>Contact Information</h3>
+                <ul class="info-list">
+                  <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Business Street, City, Country</span>
+                  </li>
+                  <li>
+                    <i class="fas fa-envelope"></i>
+                    <span>info@emspro.com</span>
+                  </li>
+                  <li>
+                    <i class="fas fa-phone"></i>
+                    <span>+1 (123) 456-7890</span>
+                  </li>
+                  <li>
+                    <i class="fas fa-globe"></i>
+                    <span>www.emspro.com</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="info-card">
+                <h3>Office Hours</h3>
+                <ul class="hours-list">
+                  <li>Monday – Friday <span>9:00 AM – 6:00 PM</span></li>
+                  <li>Saturday <span>10:00 AM – 4:00 PM</span></li>
+                  <li>Sunday <span class="closed">Closed</span></li>
+                </ul>
+                <p class="support-note">
+                  Our support team is available 24/7 for urgent issues.
+                </p>
+              </div>
+
+              <!-- Mini Map Placeholder -->
+              <div class="info-card map-card">
+                <h3>Our Location</h3>
+                <div class="map-container">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019112645456!2d-122.41941548468182!3d37.774929779759454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c0e2e1e9b%3A0x4a0d7c9e4b9e9c0!2s123%20Business%20St%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1617123456789!5m2!1sen!2sus"
+                    width="100%"
+                    height="200"
+                    style="border:0; border-radius: 12px;"
+                    allowfullscreen
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq-section">
+        <div class="container">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <div class="faq-grid">
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>How do I reset my password?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Go to the login page and click "Forgot Password". Follow the
+                  instructions sent to your email. If you’re an admin or
+                  manager, your system administrator can also reset your
+                  password.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>What are the supported roles?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>EMS Pro supports three roles: Admin (full access), Manager
+                  (team management), and Employee (self-service). Each role has
+                  a dedicated dashboard with role-specific tools.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Is my data secure?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Absolutely. We use state‑of‑the‑art encryption and store all
+                  data locally in your browser (localStorage). No data is
+                  transmitted to external servers.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Can I integrate with other HR tools?</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Currently, EMS Pro operates as a standalone solution. We’re
+                  planning API integrations for popular payroll and attendance
+                  systems in future updates.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>EMS Pro</h3>
+            <p>
+              Modern Employee Management Solution for businesses of all sizes.
+              Streamline your HR processes with our powerful tools.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="login.html">Login</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Features</h3>
+            <ul>
+              <li>Employee Database</li>
+              <li>Attendance Tracking</li>
+              <li>Payroll Management</li>
+              <li>Performance Reviews</li>
+              <li>Task Management</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Contact Us</h3>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 Business St, City,
+                Country
+              </li>
+              <li><i class="fas fa-phone"></i> +1 (123) 456-7890</li>
+              <li><i class="fas fa-envelope"></i> info@emspro.com</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 EMS Pro. All Rights Reserved. | College Project by
+            Kashish Thakur</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <button id="themeToggleBtn" class="theme-toggle-icon" title="Toggle Theme">
+      <i id="themeIcon" class="fas fa-moon"></i>
+    </button>
+
+    <script src="js/public-bundle.js"></script>
+    <script src="js/forms-bundle.js"></script>
+  </body>
+</html>

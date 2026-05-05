@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - EMS Pro</title>
+    <link rel="stylesheet" href="css/dashboard-bundle.css" />
+    <link rel="stylesheet" href="css/resp.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <button class="sidebar-close-btn" aria-label="Close menu"><i
+          class="fas fa-times"></i></button>
+      <a href="index.html" class="sidebar-logo">
+        <img src="images/logo.png" alt="EMS Pro" />
+        <span>EMS Pro</span>
+      </a>
+      <ul class="sidebar-nav">
+        <li><a href="#" data-page="dashboard" class="active"><i
+              class="fas fa-th-large"></i> Dashboard</a></li>
+        <li><a href="#" data-page="employees"><i class="fas fa-users"></i>
+            Employees</a></li>
+        <li><a href="#" data-page="tasks"><i class="fas fa-tasks"></i>
+            Tasks</a></li>
+        <li><a href="#" data-page="contacts"><i class="fas fa-envelope"></i>
+            Contacts</a></li>
+        <li>
+          <a href="#" data-page="messages">
+            <i class="fas fa-comments"></i> Messages
+            <span id="msgBadge" class="msg-badge">0</span>
+          </a>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="#" onclick="logout()" class="btn btn-outline"
+          style="color:#fff; border-color:#fff;"><i
+            class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <!-- Topbar -->
+      <div class="dashboard-topbar">
+        <button id="mobileMenuBtn"
+          class="mobile-menu-btn btn btn-sm btn-outline"><i
+            class="fas fa-bars"></i></button>
+        <div class="greeting">
+          <h2 id="greetingText">Welcome, Admin</h2>
+          <p id="userDetails"></p>
+        </div>
+        <button id="themeToggleBtn" class="btn btn-sm btn-outline"><i
+            class="fas fa-moon"></i></button>
+      </div>
+
+      <!-- Pages Container -->
+      <div id="page-dashboard" class="page active">
+        <!-- Stats -->
+        <div class="stats-grid" id="adminStats"></div>
+        <!-- Recent Tasks -->
+        <div class="card">
+          <div class="card-header"><h3>Recent Tasks</h3></div>
+          <div id="recentTasks"></div>
+        </div>
+      </div>
+
+      <div id="page-employees" class="page" style="display:none;">
+        <div class="card">
+          <div class="card-header"><h3>All Registered Employees</h3></div>
+          <div class="table-responsive">
+            <table id="employeesTable">
+              <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Employee
+                    ID</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="page-tasks" class="page" style="display:none;">
+        <div class="card">
+          <div class="card-header"><h3>Assign New Task</h3></div>
+          <form id="taskForm" class="form-group">
+            <div class="form-group"><label>Task Name</label><input type="text"
+                id="taskName" required /></div>
+            <div class="form-group"><label>Employee Name</label><input
+                type="text" id="employeeName" required /></div>
+            <div class="form-group"><label>Technology</label><input type="text"
+                id="technology" required /></div>
+            <div class="form-group"><label>Timeline</label><input type="text"
+                id="timeline" required /></div>
+            <div class="form-group"><label>Description</label><textarea
+                id="description" rows="3" required></textarea></div>
+            <div class="form-group">
+              <label>Status</label>
+              <select id="status" required>
+                <option value="active">Active</option>
+                <option value="completed">Completed</option>
+                <option value="failed">Failed</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Assign Task</button>
+          </form>
+        </div>
+        <div class="card">
+          <div class="card-header"><h3>All Tasks</h3></div>
+          <div id="allTasksList"></div>
+        </div>
+      </div>
+
+      <div id="page-contacts" class="page" style="display:none;">
+        <div class="card">
+          <div class="card-header"><h3>Contact Submissions</h3></div>
+          <div class="table-responsive">
+            <table id="contactsTable">
+              <thead><tr><th>Date</th><th>Name</th><th>Email</th><th>Message</th><th>Action</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div style="margin-top:15px;">
+            <button id="exportContactsBtn" class="btn btn-primary">Export
+              CSV</button>
+            <button id="clearContactsBtn" class="btn btn-danger">Clear
+              All</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="page-messages" class="page" style="display:none;">
+        <div class="card">
+          <div class="card-header"><h3>Send a Message</h3></div>
+          <form id="adminSendMessageForm">
+            <div class="form-group">
+              <label>To</label>
+              <select id="adminMessageTo" required>
+                <option value>-- Select Recipient --</option>
+                <option value="all_employees">All Employees</option>
+                <option value="all_managers">All Managers</option>
+                <!-- optionally load specific users -->
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="text" id="adminMessageSubject" placeholder="Subject"
+                required />
+            </div>
+            <div class="form-group">
+              <textarea id="adminMessageText" rows="3"
+                placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+
+        <div class="card" style="margin-top:30px;">
+          <div class="card-header"><h3>Internal Messages</h3></div>
+          <div id="messagesContainer"></div>
+          <button id="clearMessagesBtn" class="btn btn-danger"
+            style="margin-top:15px;">Clear All Messages</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/dashboard-bundle.js"></script>
+  </body>
+</html>

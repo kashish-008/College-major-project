@@ -1,0 +1,92 @@
+/* ==============================================
+   SECTION ANIMATIONS
+   ============================================== */
+
+/* Fade-in effect for sections when they enter viewport */
+.section-fade {
+  /* Initial state - hidden slightly below normal position */
+  transform: translateY(20px);
+  /* Smooth transition for opacity and transform properties */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Visible state when section comes into view */
+.section-fade.show {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Back to normal position */
+}
+
+/* ==============================================
+   STATS SECTION ANIMATION
+   ============================================== */
+
+/* Stats grid initial state */
+.stats-grid {
+  /* Smooth opacity transition for fade effect */
+  transition: opacity 1s ease;
+}
+
+/* Stats grid visible state */
+.stats-grid.show {
+  opacity: 1; /* Fully visible */
+}
+
+/* ==============================================
+   BUTTON ANIMATIONS
+   ============================================== */
+
+/* Base button transition for smooth effects */
+.btn {
+  transition: all 0.3s ease; /* All properties animate smoothly */
+}
+
+/* Primary button hover effect */
+.btn-primary:hover {
+  transform: translateY(-2px); /* Slight upward movement */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* ==============================================
+   CARD ANIMATIONS
+   ============================================== */
+
+/* Chooser card transition properties */
+.chooser-card {
+  /* Animate transform and box-shadow on state change */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Chooser card hover effect */
+.chooser-card:hover {
+  transform: translateY(-5px); /* Lift card up */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Enhanced shadow for floating effect */
+}
+
+/* ==============================================
+   NAVIGATION LINK ANIMATIONS
+   ============================================== */
+
+/* Navigation link with animated underline */
+
+
+/* ==============================================
+   PAGE LOAD ANIMATION
+   ============================================== */
+
+/* Fade-in animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start invisible */
+  }
+  to {
+    opacity: 1; /* End fully visible */
+  }
+}
+
+/* Apply fade-in animation to entire page */
+body {
+  animation: fadeIn 0.8s ease-out; /* Smooth fade in on page load */
+}
+
+
+

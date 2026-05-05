@@ -1,0 +1,379 @@
+/* ===== EMS PRO DASHBOARD SIDEBAR LAYOUT =====
+   Corporate HR-Tech: Slate Blue + Emerald
+   Font: DM Sans, full dark mode
+*/
+
+body {
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ---------- SIDEBAR ---------- */
+.dashboard-sidebar {
+  width: 260px;
+  background: #0f172a;
+  color: #e2e8f0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.sidebar-logo img {
+  width: 32px;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.sidebar-nav li {
+  margin-bottom: 8px;
+}
+
+.sidebar-nav li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li a.active {
+  background: #1e293b;
+  color: #10b981;
+}
+
+.sidebar-nav li a i {
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  border-top: 1px solid #334155;
+  padding-top: 20px;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.dashboard-main {
+  margin-left: 260px;
+  flex: 1;
+  padding: 30px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.header {
+  /* overrides fixed header – we don't need it with sidebar */
+  position: relative;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+.header .container {
+  display: none;
+}
+
+/* For the top area of main content */
+.dashboard-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.greeting h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: #0f172a;
+}
+
+.greeting p {
+  color: #64748b;
+  margin: 4px 0 0;
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  margin-bottom: 30px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-header h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #10b981;
+  margin: 0 0 4px;
+}
+
+.stat-card p {
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ---------- TABLES ---------- */
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th {
+  background: #f8fafc;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+}
+
+/* ---------- FORMS ---------- */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: #f8fafc;
+  transition: border 0.2s;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16,185,129,0.15);
+  background: #fff;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: #475569;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #334155;
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 0.8rem;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #475569;
+  color: #475569;
+}
+
+/* ---------- BADGES ---------- */
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge.active {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.badge.completed {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.badge.failed {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+/* ---------- MESSAGES ---------- */
+.message-item {
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: #fff;
+}
+
+.message-item .msg-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+/* ---------- DARK MODE ---------- */
+body.dark-mode {
+  background-color: #0f172a;
+}
+
+body.dark-mode .dashboard-sidebar {
+  background: #1e293b;
+}
+
+body.dark-mode .card,
+body.dark-mode .stat-card,
+body.dark-mode .message-item,
+body.dark-mode table th {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+body.dark-mode table td {
+  border-color: #334155;
+}
+
+body.dark-mode .greeting h2 {
+  color: #f1f5f9;
+}
+
+body.dark-mode .card-header h3,
+body.dark-mode .stat-card p,
+body.dark-mode .form-group label {
+  color: #cbd5e1;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+body.dark-mode .badge.active {
+  background: #1e3a8a;
+  color: #93c5fd;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+
+
+
+.msg-badge {
+  background: #ef4444;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  min-width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-left: auto;
+  display: inline-block;
+  padding: 0 6px;
+}
+

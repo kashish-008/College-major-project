@@ -1,0 +1,220 @@
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Hide sidebar close button by default (desktop) */
+.sidebar-close-btn {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .hero .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav,
+  .auth-buttons {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn-large {
+    width: 100%;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .login-wrapper {
+    flex-direction: column;
+    margin: 0 20px;
+  }
+
+  .login-branding {
+    padding: 40px 30px;
+  }
+
+  .login-form-container {
+    padding: 40px 30px;
+  }
+
+  .register-wrapper {
+    flex-direction: column;
+    margin: 0 20px;
+  }
+
+  .register-branding {
+    padding: 40px 30px;
+  }
+
+  .register-form-container {
+    padding: 40px 30px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-slider {
+    max-width: 100%;
+    margin-top: 30px;
+  }
+
+  .dashboard-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .dashboard-main {
+    margin-left: 0;
+  }
+
+  .sidebar-open .dashboard-sidebar {
+    transform: translateX(0);
+  }
+
+  /* Make sidebar overlay and ensure it's on top for small screens */
+  .dashboard-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    background: #0b2545; /* keep theme close to existing design */
+    z-index: 1200;
+    transition: transform 0.25s ease;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Mobile menu button styles inside topbar */
+  .dashboard-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: inherit;
+    padding: 6px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05rem;
+  }
+
+  /* Sidebar close button (visible on mobile) */
+  .sidebar-close-btn {
+    display: none;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: #e2e8f0;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 6px;
+  }
+
+  .sidebar-close-btn i {
+    pointer-events: none;
+  }
+
+  /* Show close button on small screens */
+  .dashboard-sidebar .sidebar-close-btn {
+    display: block;
+  }
+
+  /* Prevent body scroll when sidebar open on mobile */
+  body.sidebar-open {
+    overflow: hidden;
+  }
+
+  /* When sidebar open, add slight overlay on main content */
+  .sidebar-open .dashboard-main::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 0 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1100;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 120px 0 60px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .chooser-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .features-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    margin: 0 10px;
+  }
+
+  .card-header {
+    padding: 30px 20px;
+  }
+
+  .login-form {
+    padding: 30px 20px;
+  }
+}

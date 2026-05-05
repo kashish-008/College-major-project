@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Dashboard - EMS Pro</title>
+    <link rel="stylesheet" href="css/dashboard-bundle.css" />
+    <link rel="stylesheet" href="css/resp.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <aside class="dashboard-sidebar">
+      <button class="sidebar-close-btn" aria-label="Close menu"><i
+          class="fas fa-times"></i></button>
+      <a href="index.html" class="sidebar-logo">
+        <img src="images/logo.png" alt="EMS Pro" />
+        <span>EMS Pro</span>
+      </a>
+      <ul class="sidebar-nav">
+        <li><a href="#" data-page="dashboard" class="active"><i
+              class="fas fa-th-large"></i> My Tasks</a></li>
+        <li><a href="#" data-page="messages"><i class="fas fa-comments"></i>
+            Message Admin</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="#" onclick="logout()" class="btn btn-outline"
+          style="color:#fff;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </aside>
+
+    <main class="dashboard-main">
+      <div class="dashboard-topbar">
+        <button id="mobileMenuBtn"
+          class="mobile-menu-btn btn btn-sm btn-outline"><i
+            class="fas fa-bars"></i></button>
+        <div class="greeting">
+          <h2 id="greetingText">Welcome</h2>
+          <p id="userDetails"></p>
+        </div>
+        <button id="themeToggleBtn" class="btn btn-sm btn-outline"><i
+            class="fas fa-moon"></i></button>
+      </div>
+
+      <div id="page-dashboard" class="page active">
+        <div class="stats-grid" id="employeeStats"></div>
+        <div class="card">
+          <div class="card-header"><h3>My Tasks</h3></div>
+          <div id="myTasksContainer"></div>
+        </div>
+      </div>
+
+      <div id="page-messages" class="page" style="display:none;">
+        <!-- existing send form here (keep it) -->
+        <div class="card">
+          <div class="card-header"><h3>Send Message to Admin</h3></div>
+          <form id="messageForm">
+            <div class="form-group"><input type="text" id="msgSubject"
+                placeholder="Subject" required /></div>
+            <div class="form-group"><textarea id="msgText" rows="3"
+                placeholder="Your message..." required></textarea></div>
+            <button type="submit" class="btn btn-primary">Send</button>
+          </form>
+        </div>
+        <!-- Add received messages block -->
+        <div class="card" style="margin-top:30px;">
+          <div class="card-header"><h3>Messages from Admin</h3></div>
+          <div id="receivedMessagesContainer"></div>
+        </div>
+        <div class="card" style="margin-top:30px;">
+          <div class="card-header"><h3>My Sent Messages</h3></div>
+          <div id="myMessagesContainer"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/dashboard-bundle.js"></script>
+  </body>
+</html>

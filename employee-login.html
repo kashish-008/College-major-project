@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Login - EMS Pro</title>
+
+    <!-- Original CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/resp.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="Company Logo" />
+          <span>EMS Pro</span>
+        </a>
+        <nav class="nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="login-section">
+        <div class="login-card">
+          <div class="card-header">
+            <i class="fas fa-user role-icon"></i>
+            <h2>Employee Login</h2>
+            <p>Access your dashboard, tasks, and performance reports</p>
+          </div>
+          <form class="login-form" id="employeeLoginForm">
+            <div class="form-group">
+              <label for="employeeID">Employee ID or Email</label>
+              <input
+                type="text"
+                id="employeeID"
+                name="employeeID"
+                placeholder="Enter ID or email"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="employeePassword">Password</label>
+              <div class="password-wrapper">
+                <input
+                  type="password"
+                  id="employeePassword"
+                  name="employeePassword"
+                  placeholder="Enter password"
+                  required />
+                <button type="button" class="toggle-password"
+                  id="toggleEmployeePassword">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full"
+              id="submitBtn">
+              <span class="btn-text">Login as Employee</span>
+              <span class="btn-loader">
+                <i class="fas fa-spinner fa-spin"></i> Authenticating...
+              </span>
+            </button>
+            <div id="formMessage" class="form-message"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <!-- footer same structure -->
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>EMS Pro</h3>
+            <p>
+              Modern Employee Management Solution for businesses of all sizes.
+              Streamline your HR processes with our powerful tools.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="login.html">Login</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Features</h3>
+            <ul>
+              <li>Employee Database</li>
+              <li>Attendance Tracking</li>
+              <li>Payroll Management</li>
+              <li>Performance Reviews</li>
+              <li>Task Management</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Contact Us</h3>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 Business St, City,
+                Country
+              </li>
+              <li><i class="fas fa-phone"></i> +1 (123) 456-7890</li>
+              <li><i class="fas fa-envelope"></i> info@emspro.com</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 EMS Pro. All Rights Reserved. | College Project by
+            Kashish Thakur</p>
+        </div>
+      </div>
+    </footer>
+
+    <button id="themeToggleBtn" class="theme-toggle-icon" title="Toggle Theme">
+      <i id="themeIcon" class="fas fa-moon"></i>
+    </button>
+
+    <script src="js/auth.js"></script>
+    <script src="js/login-bundle.js"></script>
+    <script src="js/public-bundle.js"></script>
+  </body>
+</html>
