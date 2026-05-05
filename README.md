@@ -230,9 +230,7 @@ Use these credentials to test different roles:
 ## 📬 Contact & Credits
 
 **Project Author:** Kashish Thakur  
-**Trainer/Mentor:** Shaina Guru  
 **Institution:** Chandigarh Group of Colleges, Landran, Mohali  
-**Course:** Summer Training Program  
 **Project Type:** College Major Project
 
 ---
