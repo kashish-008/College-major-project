@@ -187,17 +187,6 @@ Use these credentials to test different roles:
 
 ---
 
-## 🌟 Highlights
-
-- **Zero Backend Dependency** – Completely front-end application
-- **Persistent Data** – All data stored locally, survives browser restarts
-- **Modular Code** – Bundled JavaScript for better organization
-- **Accessibility** – Keyboard navigation, ARIA labels (where applicable)
-- **Performance** – Optimized CSS bundles, efficient JavaScript
-- **Security** – Role-based access codes, session tokens
-
----
-
 ## 📌 Future Scope
 
 - Integrate backend (Node.js/Express, Python/Flask)
